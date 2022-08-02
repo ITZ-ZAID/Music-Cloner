@@ -29,3 +29,4 @@ BG_IMG = getenv("BG_IMG", "https://telegra.ph/file/f2a2d31f60a9e0f3dbe94.png")
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1669178360").split()))
 START_PIC = getenv("START_PIC", "https://telegra.ph/file/f2a2d31f60a9e0f3dbe94.png")
 OWNER_USERNAME = getenv("OWNER_USERNAME")
+IMG_1 = "https://telegra.ph/file/3505f3c0abf6008b3f6b9.jpg"

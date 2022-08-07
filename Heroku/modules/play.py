@@ -219,8 +219,8 @@ async def play(app: Client, message: Message):
     lel = await message.reply("🔄 Processing Query... Please Wait!")
 
     chid = message.chat.id
-
-    c = await app.get_chat_member(message.chat.id, BOT_ID)
+    aing = await app.get_me()
+    c = await app.get_chat_member(message.chat.id, aing.id)
     if c.status != "administrator":
         await lel.edit(
             f"**Make Sure I'm admin there!!**"

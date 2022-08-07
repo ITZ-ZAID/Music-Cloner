@@ -20,7 +20,7 @@ async def hello(client, message: Message):
             ],
             ]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await client.send_photo(message.chat.id, {choice(IMG)}, caption=MESSAGE, reply_markup=reply_markup)
+    await client.send_photo(message.chat.id, f"{choice(IMG)}", caption=MESSAGE, reply_markup=reply_markup)
 
 ##Copy from here 
 

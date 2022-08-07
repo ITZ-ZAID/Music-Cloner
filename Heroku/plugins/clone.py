@@ -7,14 +7,14 @@ from pyrogram.types import *
 from Heroku import cloner
 
 @cloner.on_message(filters.private & filters.command("start"))
-async def hello(client: ZAID, message: Message):
+async def hello(client, message: Message):
     await message.reply("Hey! It's Just a Cloner Bot example source Code")
 
 ##Copy from here 
 
 # © By Itz-Zaid Your motherfucker if uh Don't gives credits.
 @cloner.on_message(filters.private & filters.command("clone"))
-async def clone(bot: ZAID, msg: Message):
+async def clone(bot, msg: Message):
     chat = msg.chat
     text = await msg.reply("Usage:\n\n /clone token")
     cmd = msg.command
@@ -25,7 +25,7 @@ async def clone(bot: ZAID, msg: Message):
         client = Client(":memory:", API_ID, API_HASH, bot_token=phone, plugins={"root": "Heroku.modules"})
         await client.start()
         user = await client.get_me()
-        await msg.reply(f"Your Client Has Been Successfully Started As @{user.username}! ✅ \n\n Now Add Your Bot And Assistant @Amala_music_assistant_1 To Your Chat!\n\nThanks for Cloning.")
+        await msg.reply(f"Your Client Has Been Successfully Started As @{user.username}! ✅ \n\n Now Add Your Bot And Assistant @{} To Your Chat!\n\nThanks for Cloning.")
     except Exception as e:
         await msg.reply(f"**ERROR:** `{str(e)}`\nPress /start to Start again.")
 #End

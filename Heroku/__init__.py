@@ -30,7 +30,7 @@ pytgcalls = PyTgCalls(smexy)
 Music_START_TIME = time.time()
 
 app = Client(
-    "montaro1",
+    "main",
     config.API_ID,
     config.API_HASH,
     bot_token=config.BOT_TOKEN,

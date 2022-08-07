@@ -50,14 +50,6 @@ async def load_start():
 loop = asyncio.get_event_loop_policy().get_event_loop()
 loop.run_until_complete(load_start())
 
-Client(
-    ":memory:",
-    API_ID,
-    API_HASH,
-    bot_token=BOT_TOKEN,
-    plugins={"root": "Heroku.modules"},
-).start()
-
 run()
 idle()
 loop.close()

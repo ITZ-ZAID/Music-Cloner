@@ -6,7 +6,6 @@ from pytgcalls.types.input_stream import InputStream
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from Heroku import app
 from Heroku.config import que
 from Heroku.core.queue import (
     is_active_chat,
@@ -52,8 +51,8 @@ async def member_permissions(chat_id: int, user_id: int):
 from Heroku.setup.administrator import adminsOnly
 
 
-@app.on_message(command(["pause"]) & other_filters)
-async def pause(_, message: Message):
+@Client.on_message(command(["pause"]) & other_filters)
+async def pause(app: Client, message: Message):
     if message.sender_chat:
         return await message.reply_text(
             "🔴 __You're an **Anonymous Admin**!__\n│\n╰ Revert back to user account from admin rights."
@@ -79,8 +78,8 @@ async def pause(_, message: Message):
     )
 
 
-@app.on_message(command(["resume"]) & other_filters)
-async def resume(_, message: Message):
+@Client.on_message(command(["resume"]) & other_filters)
+async def resume(app: Client, message: Message):
     if message.sender_chat:
         return await message.reply_text(
             "🔴 __You're an **Anonymous Admin**!__\n│\n╰ Revert back to user account from admin rights."
@@ -107,8 +106,8 @@ async def resume(_, message: Message):
         )
 
 
-@app.on_message(command(["end"]) & other_filters)
-async def stop(_, message: Message):
+@Client.on_message(command(["end"]) & other_filters)
+async def stop(app: Client, message: Message):
     if message.sender_chat:
         return await message.reply_text(
             "🔴 __You're an **Anonymous Admin**!__\n│\n╰ Revert back to user account from admin rights."
@@ -135,8 +134,8 @@ async def stop(_, message: Message):
         )
 
 
-@app.on_message(command(["skip"]) & other_filters)
-async def skip(_, message: Message):
+@Client.on_message(command(["skip"]) & other_filters)
+async def skip(app: Client, message: Message):
     if message.sender_chat:
         return await message.reply_text(
             "🔴 __You're an **Anonymous Admin**!__\n│\n╰ Revert back to user account from admin rights."
@@ -173,8 +172,8 @@ async def skip(_, message: Message):
             )
 
 
-@app.on_message(filters.command(["cleandb"]))
-async def stop_cmd(_, message):
+@Client.on_message(filters.command(["cleandb"]))
+async def stop_cmd(app: Client, message):
     if message.sender_chat:
         return await message.reply_text(
             "🔴 __You're an **Anonymous Admin**!__\n│\n╰ Revert back to user account from admin rights."

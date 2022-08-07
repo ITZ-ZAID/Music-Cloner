@@ -4,11 +4,11 @@ import asyncio
 import time
 from pyrogram import *
 from pyrogram.types import *
-from Heroku import cloner, ASSUSERNAME
+from Heroku import cloner, ASSUSERNAME, BOT_NAME
 
 @cloner.on_message(filters.private & filters.command("start"))
 async def hello(client, message: Message):
-    await message.reply("Hey! It's Just a Cloner Bot example source Code")
+    await message.reply_photo("Hey! It's Just a Cloner Bot example source Code")
 
 ##Copy from here 
 

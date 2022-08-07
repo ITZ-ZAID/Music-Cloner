@@ -51,7 +51,6 @@ from Heroku.core.queue import (
     is_music_playing,
     music_off,
 )
-from Heroku import app
 import Heroku.calls
 from Heroku.calls import youtube
 from Heroku.config import (
@@ -201,7 +200,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     & ~filters.forwarded
     & ~filters.via_bot
 )
-async def play(_, message: Message):
+async def play(app: Client, message: Message):
     global que
     global useer
     user_id = message.from_user.id

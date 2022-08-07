@@ -27,7 +27,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from pytgcalls import __version__ as pytover
 
-from Heroku import (BOT_ID, BOT_NAME, SUDO_USERS, app, boottime)
+from Heroku import (BOT_ID, BOT_NAME, SUDO_USERS, boottime)
 from Heroku.calls.calls import client as userbot
 from Heroku.core.chats import get_served_chats
 from Heroku.core.sudo import get_sudoers
@@ -108,8 +108,8 @@ async def bot_sys_stats():
     return stats
 
 
-@app.on_message(filters.command("stats") & ~filters.edited)
-async def gstats(_, message):
+@Client.on_message(filters.command("stats") & ~filters.edited)
+async def gstats(app: Client, message):
     start = datetime.now()
     try:
         await message.delete()
@@ -134,12 +134,12 @@ Ping: `{resp} ms`
     return
 
 
-@app.on_callback_query(
+@Client.on_callback_query(
     filters.regex(
         pattern=r"^(sys_stats|sto_stats|bot_stats|Dashboard|mongo_stats|gen_stats|assis_stats|wait_stats|stats_close)$"
     )
 )
-async def stats_markup(_, CallbackQuery):
+async def stats_markup(app: Client, CallbackQuery):
     command = CallbackQuery.matches[0].group(1)
     if command == "sys_stats":
         await CallbackQuery.edit_message_text(
@@ -248,6 +248,6 @@ async def stats_markup(_, CallbackQuery):
     if command == "wait_stats":
         await CallbackQuery.answer()
 
-@app.on_callback_query(filters.regex("statsclose"))
-async def statsclose(_, query: CallbackQuery):
+@Client.on_callback_query(filters.regex("statsclose"))
+async def statsclose(app: Client, query: CallbackQuery):
    await query.message.delete()

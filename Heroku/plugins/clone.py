@@ -4,7 +4,7 @@ import asyncio
 import time
 from pyrogram import *
 from pyrogram.types import *
-from Heroku import cloner
+from Heroku import cloner, ASSUSERNAME
 
 @cloner.on_message(filters.private & filters.command("start"))
 async def hello(client, message: Message):
@@ -25,7 +25,7 @@ async def clone(bot, msg: Message):
         client = Client(":memory:", API_ID, API_HASH, bot_token=phone, plugins={"root": "Heroku.modules"})
         await client.start()
         user = await client.get_me()
-        await msg.reply(f"Your Client Has Been Successfully Started As @{user.username}! ✅ \n\n Now Add Your Bot And Assistant @{} To Your Chat!\n\nThanks for Cloning.")
+        await msg.reply(f"Your Client Has Been Successfully Started As @{user.username}! ✅ \n\n Now Add Your Bot And Assistant @{ASSUSERNAME} To Your Chat!\n\nThanks for Cloning.")
     except Exception as e:
         await msg.reply(f"**ERROR:** `{str(e)}`\nPress /start to Start again.")
 #End

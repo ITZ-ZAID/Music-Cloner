@@ -1,9 +1,9 @@
 import asyncio
 
-from pyrogram import filters
+from pyrogram import filters, Client
 from pyrogram.errors import FloodWait
 
-from Heroku import app
+
 from Heroku.config import SUDO_USERS
 from Heroku.setup.filters import command
 from Heroku.calls.calls import client as USER
@@ -12,14 +12,14 @@ from Heroku.core.chats import add_served_chat, blacklisted_chats, get_served_cha
 chat_watcher_group = 10
 
 
-@app.on_message(group=chat_watcher_group)
-async def chat_watcher_func(_, message):
+@Client.on_message(group=chat_watcher_group)
+async def chat_watcher_func(app: Client, message):
     chat_id = message.chat.id
     await add_served_chat(chat_id)
 
 
-@app.on_message(command("gcast") & filters.user(SUDO_USERS))
-async def broadcast_message(_, message):
+@Client.on_message(command("gcast") & filters.user(SUDO_USERS))
+async def broadcast_message(app: Client, message):
     if not message.reply_to_message:
         pass
     else:
@@ -77,8 +77,8 @@ async def broadcast_message(_, message):
 # Broadcast without pinned
 
 
-@app.on_message(command("broadcast") & filters.user(SUDO_USERS) & ~filters.edited)
-async def broadcast_message(_, message):
+@Client.on_message(command("broadcast") & filters.user(SUDO_USERS) & ~filters.edited)
+async def broadcast_message(app: Client, message):
     if len(message.command) < 2:
         return await message.reply_text("**Usage**:\n/broadcast [message]")
     sleep_time = 0.1

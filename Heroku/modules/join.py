@@ -3,14 +3,14 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant, FloodWait
 
-from Heroku import app, ASSUSERNAME
+from Heroku import ASSUSERNAME
 from Heroku.setup.decorators import sudo_users_only, errors
 from Heroku.setup.administrator import adminsOnly
 from Heroku.setup.filters import command
 from Heroku.calls import client as USER
 
 
-@app.on_message(
+@Client.on_message(
     command(["userbotjoin", "botjoin", "join"]) & ~filters.private & ~filters.bot
 )
 @errors
@@ -79,7 +79,7 @@ async def rem(USER, message):
         return
 
 
-@app.on_message(command(["userbotleaveall", "leaveall"]))
+@Client.on_message(command(["userbotleaveall", "leaveall"]))
 @sudo_users_only
 async def bye(client, message):
     left = 0

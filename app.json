@@ -74,6 +74,11 @@
             "required": true,
             "value": ""
         },
+        "CLONER_TOKEN": {
+            "description": "fill a bot token if you want to use cloning features Else You can Leave Blank",
+            "required": false,
+            "value": ""
+        },
         "MONGO_DB_URI": {
             "description": "fill with the mongodb url get from mongodb.com (don't use mine below !)",
             "required": true,

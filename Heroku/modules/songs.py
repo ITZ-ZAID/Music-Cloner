@@ -6,7 +6,6 @@ import yt_dlp
 from pyrogram import Client, filters
 from youtube_search import YoutubeSearch
 
-from Heroku import app
 from Heroku.config import BOT_USERNAME
 from Heroku.setup.filters import command
 
@@ -16,7 +15,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@app.on_message(command(["song"]))
+@Client.on_message(command(["song"]))
 def song(client, message):
 
     user_id = message.from_user.id

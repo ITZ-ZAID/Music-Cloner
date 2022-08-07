@@ -31,19 +31,21 @@ Music_START_TIME = time.time()
 
 app = Client(
     ":memory:",
-    Config.API_ID,
-    Config.API_HASH,
-    bot_token=Config.BOT_TOKEN,
+    config.API_ID,
+    config.API_HASH,
+    bot_token=config.BOT_TOKEN,
     plugins={"root": "Heroku.modules"},
 )
-
-cloner = Client(
-    ":memory:",
-    Config.API_ID,
-    Config.API_HASH,
-    bot_token=Config.BOT_TOKEN,
-    plugins={"root": "Heroku.plugins"},
-)
+if config.CLONER_TOKEN
+   cloner = Client(
+       ":memory:",
+       config.API_ID,
+       config.API_HASH,
+       bot_token=config.CLONER_TOKEN,
+       plugins={"root": "Heroku.plugins"},
+   )
+else:
+   cloner = None
 
 client = Client(config.SESSION_NAME, config.API_ID, config.API_HASH)
 
@@ -70,5 +72,6 @@ def all_info(app, client):
 
 app.start()
 client.start()
-cloner.start()
+if cloner:
+   cloner.start()
 all_info(app, client)

@@ -31,17 +31,17 @@ Music_START_TIME = time.time()
 
 app = Client(
     ":memory:",
-    API_ID,
-    API_HASH,
-    bot_token=BOT_TOKEN,
+    Config.API_ID,
+    Config.API_HASH,
+    bot_token=Config.BOT_TOKEN,
     plugins={"root": "Heroku.modules"},
 )
 
 cloner = Client(
     ":memory:",
-    API_ID,
-    API_HASH,
-    bot_token=BOT_TOKEN,
+    Config.API_ID,
+    Config.API_HASH,
+    bot_token=Config.BOT_TOKEN,
     plugins={"root": "Heroku.plugins"},
 )
 

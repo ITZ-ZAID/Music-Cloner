@@ -7,6 +7,7 @@ que = {}
 admins = {}
 SESSION_NAME = getenv("SESSION_NAME", "session")
 BOT_TOKEN = getenv("BOT_TOKEN")
+CLONER_TOKEN = getenv("CLONER_TOKEN")
 BOT_NAME = getenv("BOT_NAME")
 BOT_USERNAME = getenv("BOT_USERNAME")
 ASSID = int(getenv("ASSID"))

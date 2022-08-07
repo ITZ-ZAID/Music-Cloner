@@ -36,7 +36,7 @@ app = Client(
     bot_token=config.BOT_TOKEN,
     plugins={"root": "Heroku.modules"},
 )
-if config.CLONER_TOKEN
+if config.CLONER_TOKEN:
    cloner = Client(
        ":memory:",
        config.API_ID,

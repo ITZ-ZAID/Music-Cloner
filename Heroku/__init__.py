@@ -30,10 +30,19 @@ pytgcalls = PyTgCalls(smexy)
 Music_START_TIME = time.time()
 
 app = Client(
-    "main",
-    config.API_ID,
-    config.API_HASH,
-    bot_token=config.BOT_TOKEN,
+    ":memory:",
+    API_ID,
+    API_HASH,
+    bot_token=BOT_TOKEN,
+    plugins={"root": "Heroku.modules"},
+)
+
+cloner = Client(
+    ":memory:",
+    API_ID,
+    API_HASH,
+    bot_token=BOT_TOKEN,
+    plugins={"root": "Heroku.plugins"},
 )
 
 client = Client(config.SESSION_NAME, config.API_ID, config.API_HASH)
@@ -61,4 +70,5 @@ def all_info(app, client):
 
 app.start()
 client.start()
+cloner.start()
 all_info(app, client)

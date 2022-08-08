@@ -65,16 +65,16 @@ async def pause(app: Client, message: Message):
     chat_id = message.chat.id
     if not await is_active_chat(chat_id):
         return await message.reply_text(
-            "• ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ ❌"
+            "• Bot isn't streaming on voice chat."
         )
     elif not await is_music_playing(message.chat.id):
         return await message.reply_text(
-            "• ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ ❌"
+            "• Bot isn't streaming on voice chat."
         )
     await music_off(chat_id)
     await calls.pytgcalls.pause_stream(chat_id)
     await message.reply_text(
-        f"• ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ▶️ ᴘᴀᴜsᴇᴅ\n• ᴀᴅᴍɪɴ : {checking}"
+        f"• Voicechat Paused by : {checking}"
     )
 
 
@@ -102,7 +102,7 @@ async def resume(app: Client, message: Message):
         await music_on(chat_id)
         await calls.pytgcalls.resume_stream(chat_id)
         await message.reply_text(
-            f"• ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ⏸ ʀᴇsᴜᴍᴇᴅ\n• ᴀᴅᴍɪɴ : {checking}"
+            f"• Voicechat Resumed by : {checking}"
         )
 
 
@@ -126,7 +126,7 @@ async def stop(app: Client, message: Message):
         await remove_active_chat(chat_id)
         await calls.pytgcalls.leave_group_call(chat_id)
         await message.reply_text(
-            f"• ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ❌ sᴛᴏᴘᴘᴇᴅ\n• ᴀᴅᴍɪɴ : {checking}"
+            f"• Streaming ended by : {checking}"
         )
     else:
         return await message.reply_text(
@@ -168,7 +168,7 @@ async def skip(app: Client, message: Message):
                 ),
             )
             await message.reply_text(
-                f"• ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ⏯ sᴋɪᴘᴘᴇᴅ\n• ᴀᴅᴍɪɴ : {checking}"
+                f"• Skipped by : {checking}"
             )
 
 

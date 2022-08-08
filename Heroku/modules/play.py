@@ -306,12 +306,12 @@ async def play(app: Client, message: Message):
     [
         
        [
-            InlineKeyboardButton("📂 ꜱᴜᴘᴘᴏʀᴛ", url=f"t.me/{SUPPORT}"),
-            InlineKeyboardButton("✨ ᴄʜᴀɴɴᴇʟ", url=f"t.me/{UPDATE}"),
+            InlineKeyboardButton("📂 𝗦𝘂𝗽𝗽𝗼𝗿𝘁", url=f"t.me/{SUPPORT}"),
+            InlineKeyboardButton("✨ 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=f"t.me/{UPDATE}"),
         ],[
-            InlineKeyboardButton("🎥 ᴡᴀᴛᴄʜ", url=f"{url}"),
+            InlineKeyboardButton("🎥 𝗪𝗮𝘁𝗰𝗵 𝗼𝗻 𝗬𝗼𝘂𝗧𝘂𝗯𝗲", url=f"{url}"),
         ],[
-            InlineKeyboardButton("🗑️ ᴄʟᴏsᴇ", callback_data="cls"),
+            InlineKeyboardButton("🗑️ 𝗖𝗹𝗼𝘀𝗲", callback_data="cls"),
         ],
         
     ]
@@ -349,12 +349,12 @@ async def play(app: Client, message: Message):
     [
         
        [
-            InlineKeyboardButton("📂 ꜱᴜᴘᴘᴏʀᴛ", url=f"t.me/{SUPPORT}"),
-            InlineKeyboardButton("✨ ᴄʜᴀɴɴᴇʟ", url=f"t.me/{UPDATE}"),
+            InlineKeyboardButton("📂 𝗦𝘂𝗽𝗽𝗼𝗿𝘁", url=f"t.me/{SUPPORT}"),
+            InlineKeyboardButton("✨ 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=f"t.me/{UPDATE}"),
         ],[
-            InlineKeyboardButton("🎥 ᴡᴀᴛᴄʜ", url=f"{url}"),
+            InlineKeyboardButton("🎥 𝗪𝗮𝘁𝗰𝗵 𝗼𝗻 𝗬𝗼𝘂𝗧𝘂𝗯𝗲", url=f"{url}"),
         ],[
-            InlineKeyboardButton("🗑️ ᴄʟᴏsᴇ", callback_data="cls"),
+            InlineKeyboardButton("🗑️ 𝗖𝗹𝗼𝘀𝗲", callback_data="cls"),
         ],
         
     ]
@@ -482,12 +482,12 @@ async def play(app: Client, message: Message):
         keyboard = InlineKeyboardMarkup(
     [
        [
-            InlineKeyboardButton("📂 ꜱᴜᴘᴘᴏʀᴛ", url=f"t.me/{SUPPORT}"),
-            InlineKeyboardButton("✨ ᴄʜᴀɴɴᴇʟ", url=f"t.me/{UPDATE}"),
+            InlineKeyboardButton("📂 𝗦𝘂𝗽𝗽𝗼𝗿𝘁", url=f"t.me/{SUPPORT}"),
+            InlineKeyboardButton("✨ 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=f"t.me/{UPDATE}"),
         ],[
-            InlineKeyboardButton("🎥 ᴡᴀᴛᴄʜ", url=f"{url}"),
+            InlineKeyboardButton("🎥 𝗪𝗮𝘁𝗰𝗵 𝗼𝗻 𝗬𝗼𝘂𝗧𝘂𝗯𝗲", url=f"{url}"),
         ],[
-            InlineKeyboardButton("🗑️ ᴄʟᴏsᴇ", callback_data="cls"),
+            InlineKeyboardButton("🗑️ 𝗖𝗹𝗼𝘀𝗲", callback_data="cls"),
         ],
         
     ]
